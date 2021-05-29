@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const todorouter = require("./routes/todo.routes");
 const app = express();
 
 var corsOptions = {
@@ -10,6 +10,7 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.json());
+app.use(todorouter);
 
 const db = require("./models");
 db.sequelize.sync({force: true}).then(()=>{
