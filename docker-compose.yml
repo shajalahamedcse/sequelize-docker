@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3'
 services:
 
 #   #PHP Service
@@ -31,11 +31,8 @@ services:
 
   #MySQL Service
   db:
-    platform: linux/x86_64
-    image: mysql:5.7.22
+    image: mysql
     container_name: db
-    restart: unless-stopped
-    tty: true
     ports:
       - "3306:3306"
     environment:
